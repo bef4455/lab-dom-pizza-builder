@@ -42,19 +42,35 @@ function renderPepperoni() {
   });
 }
 
+
 function renderMushrooms() {
-  // Iteration 1: set the visibility of `<section class="mushroom">`
-}
+  document.querySelector('.mush').forEach((oneMush) => {
+    if (state.mushrooms) {
+      oneMush.style.visibility = 'visible';
+    } else {
+      oneMush.style.visibility = 'hidden';
+    }
+  });
+} // Iteration 1: set the visibility of `<section class="mushroom">`
 
 function renderGreenPeppers() {
+    document.querySelector('.green').forEach((oneGreen) => {
+      if (state.oneGreen) {
+        oneGreen.style.visibility = 'visible';
+      } else {
+        oneGreen.style.visibility = 'hidden';
+      }
+    });
+  }
   // Iteration 1: set the visibility of `<section class="green-pepper">`
-}
+
 
 function renderWhiteSauce() {
+sauce-white
   // Iteration 2: add/remove the class "sauce-white" of `<section class="sauce">`
 }
-
 function renderGlutenFreeCrust() {
+  
   // Iteration 2: add/remove the class "crust-gluten-free" of `<section class="crust">`
 }
 
@@ -75,9 +91,22 @@ document.querySelector('.btn.btn-pepperoni').addEventListener('click', function 
 });
 
 // Iteration 1: Add click event listener on `<button class="btn btn-mushrooms">`
-
+document.querySelector('.btn.btn-mushrooms').addEventListener('click', function () {
+  state.mushrooms = !state.mushrooms;
+  renderEverything();
+});
 // Iteration 1: Add click event listener on `<button class="btn btn-green-peppers">`
-
+document.querySelector('.btn.btn-green-peppers').addEventListener('click', function () {
+  state.greenPeppers = !state.greenPeppers;
+  renderEverything();
+});
 // Iteration 2: Add click event listener on `<button class="btn btn-sauce">`
-
+document.querySelector('.btn.btn-sauce').addEventListener('click', function () {
+  state.sauce = !state.sauce;
+  renderEverything();
+});
 // Iteration 2: Add click event listener on `<button class="btn btn-crust">`
+document.querySelector('.btn.btn-crust').addEventListener('click', function () {
+  state.crust = !state.crust;
+  renderEverything();
+});
